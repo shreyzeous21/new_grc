@@ -39,6 +39,10 @@ const capabilities = {
             title: "shrey23",
             href: "/shreys",
           },
+          {
+            title: "shrey213",
+            href: "/shreys",
+          },
         ],
       },
       {
@@ -366,14 +370,14 @@ export function MainNav() {
                   <div className="mb-2 text-sm font-medium leading-none">
                     Services
                   </div>
-                  <div className="mb-4 bg-gray-100 overflow-auto  rounded-md grid gap-1 max-h-[400px]">
+                  <div className="py-4 bg-gray-100 overflow-auto w-[13vw]  rounded-md grid gap-1 max-h-[450px]">
                     {capabilities[
                       activeCapability as keyof typeof capabilities
                     ].items.map((item) => (
                       <div key={item.title} className="group">
                         <Link
                           href={item.href}
-                          className="grid gap-1 rounded-lg p-2 hover:bg-accent"
+                          className="grid gap-2 rounded-lg p-2 hover:bg-accent"
                         >
                           <div className="font-medium leading-none group-hover:text-accent-foreground">
                             {item.title}
@@ -383,7 +387,7 @@ export function MainNav() {
                           </p>
                         </Link>
                         {item.subitems && (
-                          <div className="ml-2 hidden group-hover:grid group-hover:grid-cols-2">
+                          <div className="gap-2 mx-2 px-2 rounded-md bg-gray-200 hidden group-hover:grid group-hover:grid-cols-2">
                             {item.subitems.map((subitem) => (
                               <Link
                                 key={subitem.title}
