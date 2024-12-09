@@ -355,7 +355,7 @@ export function MainNav() {
                   <div className="mb-2 text-sm font-medium leading-none">
                     Services
                   </div>
-                  <div className="py-4 bg-gray-100 overflow-auto  rounded-md grid  max-h-[450px]">
+                  <div className="py-4 bg-gray-100  overflow-auto  rounded-md grid  max-h-[450px]">
                     {capabilities[
                       activeCapability as keyof typeof capabilities
                     ].items.map((item) => (
@@ -372,12 +372,12 @@ export function MainNav() {
                           </p>
                         </Link>
                         {item.subitems && (
-                          <div className="gap-2 mx-2 px-2 rounded-md bg-gray-200 hidden group-hover:grid group-hover:grid-cols-1">
+                          <div className="gap-2 hover:transition hover:duration-200 mx-2 px-2 rounded-md bg-gray-200 hidden group-hover:grid group-hover:grid-cols-1">
                             {item.subitems.map((subitem) => (
                               <Link
                                 key={subitem.title}
                                 href={subitem.href}
-                                className="block hover:text-green-700  py-1 text-sm hover:text-accent-foreground"
+                                className="block transition duration-200 hover:text-green-700  py-1 text-sm hover:text-accent-foreground"
                               >
                                 {subitem.title}
                               </Link>
