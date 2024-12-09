@@ -19,17 +19,27 @@ const capabilities = {
       "Stay competitive with cutting-edge tech optimized for speed & performance",
     items: [
       {
-        title: "Frontend Development",
+        title: "Rack Mount",
         href: "/capabilities/frontend",
         description: "Create engaging user interfaces with modern frameworks",
       },
       {
-        title: "Backend Development",
+        title: "GPU",
         href: "/capabilities/backend",
         description: "Build scalable server-side applications",
       },
       {
-        title: "API Development",
+        title: "Twin",
+        href: "/capabilities/api",
+        description: "Design and implement robust APIs",
+      },
+      {
+        title: "Blade",
+        href: "/capabilities/api",
+        description: "Design and implement robust APIs",
+      },
+      {
+        title: "Storage",
         href: "/capabilities/api",
         description: "Design and implement robust APIs",
       },
@@ -88,24 +98,118 @@ const capabilities = {
         description: "Interactive prototypes",
       },
     ],
+    tools1: [
+      {
+        title: "Figmasss",
+        href: "/tools/figma",
+        description: "Collaborative design",
+      },
+      {
+        title: "Adobe CC",
+        href: "/tools/adobe",
+        description: "Creative suite",
+      },
+      {
+        title: "Framer",
+        href: "/tools/framer",
+        description: "Interactive prototypes",
+      },
+    ],
   },
-  Marketing: {
+
+  Edge: {
     description: "Drive growth with data-driven marketing strategies",
     items: [
       {
-        title: "Content Marketing",
+        title: "edge and telecom",
         href: "/capabilities/content",
         description: "Create engaging content",
       },
       {
-        title: "SEO",
+        title: "component",
         href: "/capabilities/seo",
         description: "Improve search visibility",
       },
+    ],
+    tools: [
       {
-        title: "Social Media",
-        href: "/capabilities/social",
-        description: "Build brand presence",
+        title: "HubSpot",
+        href: "/tools/hubspot",
+        description: "Marketing automation",
+      },
+      {
+        title: "Google Analytics",
+        href: "/tools/analytics",
+        description: "Track performance",
+      },
+      {
+        title: "Semrush",
+        href: "/tools/semrush",
+        description: "SEO toolkit",
+      },
+    ],
+  },
+  Networking: {
+    description: "Drive growth with data-driven marketing strategies",
+    items: [
+      {
+        title: "switches",
+        href: "/capabilities/content",
+        description: "Create engaging content",
+      },
+      {
+        title: "addapters",
+        href: "/capabilities/seo",
+        description: "Improve search visibility",
+      },
+    ],
+    tools: [
+      {
+        title: "HubSpot",
+        href: "/tools/hubspot",
+        description: "Marketing automation",
+      },
+      {
+        title: "Google Analytics",
+        href: "/tools/analytics",
+        description: "Track performance",
+      },
+      {
+        title: "Semrush",
+        href: "/tools/semrush",
+        description: "SEO toolkit",
+      },
+    ],
+    tools1: [
+      {
+        title: "HubSpot",
+        href: "/tools/hubspot",
+        description: "Marketing automation",
+      },
+      {
+        title: "Google sherrrrr Analytics",
+        href: "/tools/analytics",
+        description: "Track performance",
+      },
+      {
+        title: "Semrush",
+        href: "/tools/semrush",
+        description: "SEO toolkit",
+      },
+    ],
+  },
+  Workstation_and_Gaming: {
+    description: "Drive growth with data-driven marketing strategies",
+    items: [
+      {
+        title: "super workstation",
+        href: "/capabilities/content",
+        description: "Create engaging content",
+      },
+      {
+        title: "superio",
+        href: "/capabilities/seo",
+        description: "Improve search visibility",
       },
     ],
     tools: [
@@ -139,15 +243,15 @@ export function MainNav() {
         <NavigationMenuItem>
           <Link href="/why" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Why Webstacks
+              New GRC
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px] xl:w-[800px] xl:grid-cols-[280px_1fr]">
-              <div className="grid gap-4">
+          <NavigationMenuContent className="w-[100vw] ground-hover:w-full">
+            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[90vh] xl:w-[1000px] xl:grid-cols-[280px_1fr]">
+              <div className="grid h-10 gap-4">
                 {Object.entries(capabilities).map(([name, content]) => (
                   <div
                     key={name}
@@ -164,7 +268,9 @@ export function MainNav() {
                   </div>
                 ))}
               </div>
-              <div className="hidden xl:grid xl:gap-6">
+
+              <div className="hidden xl:grid xl:grid-cols-3 xl:gap-6">
+                {/* Services Section */}
                 <div>
                   <div className="mb-3 text-sm font-medium leading-none">
                     Services
@@ -189,6 +295,7 @@ export function MainNav() {
                   </div>
                 </div>
 
+                {/* Tools Section */}
                 <div>
                   <div className="mb-3 text-sm font-medium leading-none">
                     Tools & Technologies
@@ -196,22 +303,49 @@ export function MainNav() {
                   <div className="mt-2 grid gap-4">
                     {capabilities[
                       activeCapability as keyof typeof capabilities
-                    ].tools.map((item) => (
+                    ].tools.map((tool) => (
                       <Link
-                        key={item.title}
-                        href={item.href}
+                        key={tool.title}
+                        href={tool.href}
                         className="group grid gap-1 rounded-lg p-2 hover:bg-accent"
                       >
                         <div className="font-medium leading-none group-hover:text-accent-foreground">
-                          {item.title}
+                          {tool.title}
                         </div>
                         <p className="line-clamp-2 text-sm text-muted-foreground">
-                          {item.description}
+                          {tool.description}
                         </p>
                       </Link>
                     ))}
                   </div>
                 </div>
+                {/* More Tools Section */}
+                {capabilities[activeCapability as keyof typeof capabilities]
+                  ?.tools1?.length > 0 && (
+                  <div>
+                    <div className="mb-3 text-sm font-medium leading-none">
+                      More Tools
+                    </div>
+                    <div className="mt-2 grid gap-4">
+                      {capabilities[
+                        activeCapability as keyof typeof capabilities
+                      ].tools1?.map((tool) => (
+                        <Link
+                          key={tool.title}
+                          href={tool.href}
+                          className="group grid gap-1 rounded-lg p-2 hover:bg-accent"
+                        >
+                          <div className="font-medium leading-none group-hover:text-accent-foreground">
+                            {tool.title}
+                          </div>
+                          <p className="line-clamp-2 text-sm text-muted-foreground">
+                            {tool.description}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </NavigationMenuContent>

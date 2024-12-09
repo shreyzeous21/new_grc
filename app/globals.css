@@ -8,6 +8,12 @@
   padding: 0;
 }
 
+.overflow-y-scroll {
+  max-height: 60vh; /* Adjust based on your layout */
+  overflow-y: auto;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

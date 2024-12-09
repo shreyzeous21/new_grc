@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AR_One_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+// import Navbar from "@/components/Navbar";
 
 const font = AR_One_Sans({ weight: "400", subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Header />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>

@@ -11,10 +11,12 @@ import { MobileNav } from "./mobile-nav";
 export function Header() {
   return (
     <div className="flex flex-col justify-center w-full mx-auto items-center">
-      <header className="sticky max-w-6xl top-0 z-50 w-full mx-auto border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky max-w-6xl top-0 z-50 w-full mx-auto border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-2">
         <div className=" w-full flex justify-between items-center h-16 px-4">
           <Link href="/" className="flex items-center space-x-2">
-            <div>Logo</div>
+            <div>
+              <img src="/logo.svg" alt="" className="h-16 w-auto" />
+            </div>
           </Link>
           <div className="hidden md:flex">
             <MainNav />
