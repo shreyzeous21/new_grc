@@ -8,9 +8,8 @@
   padding: 0;
 }
 
-/* In your global CSS file or within a <style> block */
 ::-webkit-scrollbar {
-  width: 6px; /* Adjust the width of the scrollbar */
+  width: 0px; /* Adjust the width of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {

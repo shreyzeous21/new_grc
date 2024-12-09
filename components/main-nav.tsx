@@ -164,7 +164,26 @@ const capabilities = {
         title: "UI/UX Design",
         href: "/capabilities/ui-ux",
         description: "Create intuitive user experiences",
+        subitems: [
+          {
+            title: "shrey",
+            href: "/shrey",
+          },
+          {
+            title: "shrey1",
+            href: "/shrey",
+          },
+          {
+            title: "shre1",
+            href: "/shrey",
+          },
+          {
+            title: "shrey23",
+            href: "/shreys",
+          },
+        ],
       },
+
       {
         title: "Brand Design",
         href: "/capabilities/brand",
@@ -179,23 +198,6 @@ const capabilities = {
     tools: [
       {
         title: "Figma",
-        href: "/tools/figma",
-        description: "Collaborative design",
-      },
-      {
-        title: "Adobe CC",
-        href: "/tools/adobe",
-        description: "Creative suite",
-      },
-      {
-        title: "Framer",
-        href: "/tools/framer",
-        description: "Interactive prototypes",
-      },
-    ],
-    tools1: [
-      {
-        title: "Figmasss",
         href: "/tools/figma",
         description: "Collaborative design",
       },
@@ -275,23 +277,6 @@ const capabilities = {
         description: "SEO toolkit",
       },
     ],
-    tools1: [
-      {
-        title: "HubSpot",
-        href: "/tools/hubspot",
-        description: "Marketing automation",
-      },
-      {
-        title: "Google sherrrrr Analytics",
-        href: "/tools/analytics",
-        description: "Track performance",
-      },
-      {
-        title: "Semrush",
-        href: "/tools/semrush",
-        description: "SEO toolkit",
-      },
-    ],
   },
   Workstation_and_Gaming: {
     description: "Drive growth with data-driven marketing strategies",
@@ -333,7 +318,7 @@ export function MainNav() {
   );
 
   return (
-    <NavigationMenu>
+    <NavigationMenu className="">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/why" legacyBehavior passHref>
@@ -344,7 +329,7 @@ export function MainNav() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-          <NavigationMenuContent className="w-[100vw] ground-hover:w-full">
+          <NavigationMenuContent className="">
             <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[88vh] xl:w-[800px] xl:grid-cols-[250px_1fr]">
               <div className="grid h-auto">
                 {Object.entries(capabilities).map(([name, content]) => (
@@ -370,7 +355,7 @@ export function MainNav() {
                   <div className="mb-2 text-sm font-medium leading-none">
                     Services
                   </div>
-                  <div className="py-4 bg-gray-100 overflow-auto w-[13vw]  rounded-md grid gap-1 max-h-[450px]">
+                  <div className="py-4 bg-gray-100 overflow-auto  rounded-md grid  max-h-[450px]">
                     {capabilities[
                       activeCapability as keyof typeof capabilities
                     ].items.map((item) => (
@@ -387,7 +372,7 @@ export function MainNav() {
                           </p>
                         </Link>
                         {item.subitems && (
-                          <div className="gap-2 mx-2 px-2 rounded-md bg-gray-200 hidden group-hover:grid group-hover:grid-cols-2">
+                          <div className="gap-2 mx-2 px-2 rounded-md bg-gray-200 hidden group-hover:grid group-hover:grid-cols-1">
                             {item.subitems.map((subitem) => (
                               <Link
                                 key={subitem.title}
@@ -428,33 +413,6 @@ export function MainNav() {
                     ))}
                   </div>
                 </div>
-                {/* More Tools Section */}
-                {capabilities[activeCapability as keyof typeof capabilities]
-                  ?.tools1?.length > 0 && (
-                  <div>
-                    <div className="mb-3 text-sm font-medium leading-none">
-                      More Tools
-                    </div>
-                    <div className="mt-2 grid gap-4">
-                      {capabilities[
-                        activeCapability as keyof typeof capabilities
-                      ].tools1?.map((tool) => (
-                        <Link
-                          key={tool.title}
-                          href={tool.href}
-                          className="group grid gap-1 rounded-lg p-2 hover:bg-accent"
-                        >
-                          <div className="font-medium leading-none group-hover:text-accent-foreground">
-                            {tool.title}
-                          </div>
-                          <p className="line-clamp-2 text-sm text-muted-foreground">
-                            {tool.description}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </NavigationMenuContent>
