@@ -250,8 +250,8 @@ export function MainNav() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
           <NavigationMenuContent className="w-[100vw] ground-hover:w-full">
-            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[87vh] xl:w-[1000px] xl:grid-cols-[280px_1fr]">
-              <div className="grid h-10 gap-4">
+            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[87vh] xl:w-[900px] xl:grid-cols-[250px_1fr]">
+              <div className="grid h-auto">
                 {Object.entries(capabilities).map(([name, content]) => (
                   <div
                     key={name}
@@ -272,10 +272,10 @@ export function MainNav() {
               <div className="hidden xl:grid xl:grid-cols-3 xl:gap-6">
                 {/* Services Section */}
                 <div>
-                  <div className="mb-3 text-sm font-medium leading-none">
+                  <div className="mb-2 text-sm font-medium leading-none">
                     Services
                   </div>
-                  <div className="mt-2 grid gap-4">
+                  <div className="mt-2 grid gap-2">
                     {capabilities[
                       activeCapability as keyof typeof capabilities
                     ].items.map((item) => (
