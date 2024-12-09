@@ -250,7 +250,7 @@ export function MainNav() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
           <NavigationMenuContent className="w-[100vw] ground-hover:w-full">
-            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[90vh] xl:w-[1000px] xl:grid-cols-[280px_1fr]">
+            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[87vh] xl:w-[1000px] xl:grid-cols-[280px_1fr]">
               <div className="grid h-10 gap-4">
                 {Object.entries(capabilities).map(([name, content]) => (
                   <div
