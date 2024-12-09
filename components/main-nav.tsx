@@ -24,23 +24,23 @@ const capabilities = {
         description: "Create engaging user interfaces with modern frameworks",
         subitems: [
           {
-            title: "shrey",
+            title: "1U",
             href: "/shrey",
           },
           {
-            title: "shrey1",
+            title: "2U",
             href: "/shrey",
           },
           {
-            title: "shre1",
+            title: "single",
             href: "/shrey",
           },
           {
-            title: "shrey23",
+            title: "double",
             href: "/shreys",
           },
           {
-            title: "shrey213",
+            title: "product",
             href: "/shreys",
           },
         ],
