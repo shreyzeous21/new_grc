@@ -8,11 +8,19 @@
   padding: 0;
 }
 
-.overflow-y-scroll {
-  max-height: 60vh; /* Adjust based on your layout */
-  overflow-y: auto;
+/* In your global CSS file or within a <style> block */
+::-webkit-scrollbar {
+  width: 6px; /* Adjust the width of the scrollbar */
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Customize the thumb color */
+  border-radius: 4px; /* Optional: round corners of the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Optional: make track transparent */
+}
 
 @layer base {
   :root {

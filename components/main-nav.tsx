@@ -22,26 +22,117 @@ const capabilities = {
         title: "Rack Mount",
         href: "/capabilities/frontend",
         description: "Create engaging user interfaces with modern frameworks",
+        subitems: [
+          {
+            title: "shrey",
+            href: "/shrey",
+          },
+          {
+            title: "shrey1",
+            href: "/shrey",
+          },
+          {
+            title: "shre1",
+            href: "/shrey",
+          },
+          {
+            title: "shrey23",
+            href: "/shreys",
+          },
+        ],
       },
       {
         title: "GPU",
         href: "/capabilities/backend",
         description: "Build scalable server-side applications",
+        subitems: [
+          {
+            title: "shrey",
+            href: "/shrey",
+          },
+          {
+            title: "shrey1",
+            href: "/shrey",
+          },
+          {
+            title: "shre1",
+            href: "/shrey",
+          },
+          {
+            title: "shrey23",
+            href: "/shreys",
+          },
+        ],
       },
       {
         title: "Twin",
         href: "/capabilities/api",
         description: "Design and implement robust APIs",
+        subitems: [
+          {
+            title: "shrey",
+            href: "/shrey",
+          },
+          {
+            title: "shrey1",
+            href: "/shrey",
+          },
+          {
+            title: "shre1",
+            href: "/shrey",
+          },
+          {
+            title: "shrey23",
+            href: "/shreys",
+          },
+        ],
       },
+
       {
         title: "Blade",
         href: "/capabilities/api",
         description: "Design and implement robust APIs",
+        subitems: [
+          {
+            title: "shrey",
+            href: "/shrey",
+          },
+          {
+            title: "shrey1",
+            href: "/shrey",
+          },
+          {
+            title: "shre1",
+            href: "/shrey",
+          },
+          {
+            title: "shrey23",
+            href: "/shreys",
+          },
+        ],
       },
       {
         title: "Storage",
         href: "/capabilities/api",
         description: "Design and implement robust APIs",
+        subitems: [
+          {
+            title: "shrey",
+            href: "/shrey",
+          },
+          {
+            title: "shrey1",
+            href: "/shrey",
+          },
+          {
+            title: "shre1",
+            href: "/shrey",
+          },
+          {
+            title: "shrey23",
+            href: "/shreys",
+          },
+        ],
       },
     ],
     tools: [
@@ -250,47 +341,61 @@ export function MainNav() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
           <NavigationMenuContent className="w-[100vw] ground-hover:w-full">
-            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[87vh] xl:w-[900px] xl:grid-cols-[250px_1fr]">
+            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[88vh] xl:w-[800px] xl:grid-cols-[250px_1fr]">
               <div className="grid h-auto">
                 {Object.entries(capabilities).map(([name, content]) => (
                   <div
                     key={name}
                     className={cn(
                       "cursor-pointer rounded-lg p-3 hover:bg-accent",
-                      activeCapability === name && "bg-accent"
+                      activeCapability === name && "bg-accent "
                     )}
                     onMouseEnter={() => setActiveCapability(name)}
                   >
                     <div className="font-medium leading-none">{name}</div>
-                    <p className="mt-1 hidden text-sm text-muted-foreground xl:block">
+                    <p className=" hidden text-sm text-muted-foreground xl:block">
                       {content.description}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="hidden xl:grid xl:grid-cols-3 xl:gap-6">
+              <div className="hidden  xl:grid xl:grid-cols-3 xl:gap-6">
                 {/* Services Section */}
                 <div>
                   <div className="mb-2 text-sm font-medium leading-none">
                     Services
                   </div>
-                  <div className="mt-2 grid gap-2">
+                  <div className="mb-4 bg-gray-100 overflow-auto  rounded-md grid gap-1 max-h-[400px]">
                     {capabilities[
                       activeCapability as keyof typeof capabilities
                     ].items.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.href}
-                        className="group grid gap-1 rounded-lg p-2 hover:bg-accent"
-                      >
-                        <div className="font-medium leading-none group-hover:text-accent-foreground">
-                          {item.title}
-                        </div>
-                        <p className="line-clamp-2 text-sm text-muted-foreground">
-                          {item.description}
-                        </p>
-                      </Link>
+                      <div key={item.title} className="group">
+                        <Link
+                          href={item.href}
+                          className="grid gap-1 rounded-lg p-2 hover:bg-accent"
+                        >
+                          <div className="font-medium leading-none group-hover:text-accent-foreground">
+                            {item.title}
+                          </div>
+                          <p className="line-clamp-2 text-sm text-muted-foreground">
+                            {item.description}
+                          </p>
+                        </Link>
+                        {item.subitems && (
+                          <div className="ml-2 hidden group-hover:grid group-hover:grid-cols-2">
+                            {item.subitems.map((subitem) => (
+                              <Link
+                                key={subitem.title}
+                                href={subitem.href}
+                                className="block hover:text-green-700  py-1 text-sm hover:text-accent-foreground"
+                              >
+                                {subitem.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -307,7 +412,7 @@ export function MainNav() {
                       <Link
                         key={tool.title}
                         href={tool.href}
-                        className="group grid gap-1 rounded-lg p-2 hover:bg-accent"
+                        className="ml-4 group grid gap-1 rounded-lg p-2 hover:bg-accent"
                       >
                         <div className="font-medium leading-none group-hover:text-accent-foreground">
                           {tool.title}
@@ -350,6 +455,7 @@ export function MainNav() {
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
           <NavigationMenuContent>
