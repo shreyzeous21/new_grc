@@ -330,7 +330,7 @@ export function MainNav() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
           <NavigationMenuContent className="">
-            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[88vh] xl:w-[800px] xl:grid-cols-[250px_1fr]">
+            <div className="grid w-[500px] gap-3 p-4 md:w-[500px] lg:w-[600px] h-[88vh] xl:w-[900px] xl:grid-cols-[250px_1fr]">
               <div className="grid h-auto">
                 {Object.entries(capabilities).map(([name, content]) => (
                   <div
@@ -349,7 +349,7 @@ export function MainNav() {
                 ))}
               </div>
 
-              <div className="hidden  xl:grid xl:grid-cols-3 xl:gap-6">
+              <div className="hidden  xl:grid xl:grid-cols-2 xl:gap-6">
                 {/* Services Section */}
                 <div>
                   <div className="mb-2 text-sm font-medium leading-none">
